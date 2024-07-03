@@ -13,10 +13,10 @@ do { \
     } \
 } while (0)
 
+
+// GPU kernel
 __global__ void Add(float* a,float* b,float* sum,int ARRAY_SIZE){
-    unsigned int idx = threadIdx.x;
-    if(idx<ARRAY_SIZE)
-        sum[idx] = a[idx] + b[idx];
+    /* to be impelemnted */
 }
 
 void add_host(float* a, float*b,float* c){
@@ -62,7 +62,7 @@ int main(){
     CUDA_CHECK_ERROR(cudaEventRecord(start, 0));
 
     // launch device kernel
-    Add<<<1,ARRAY_SIZE>>>(a_d,b_d,sum_d,ARRAY_SIZE);
+    /*To be implemented*/
 
     // Record the stop event
     CUDA_CHECK_ERROR(cudaEventRecord(stop, 0));
